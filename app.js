@@ -1,8 +1,12 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:3000/api-crud-mongoose', (err) => {
+mongoose.connect('mongodb://localhost:27017/api-crud-mongoose', (err) => {
   err ? console.log('Can\'t connect to database') : console.log('Database connected')
 });
 
