@@ -35,12 +35,11 @@ module.exports = {
   },
 
   delete: function(req, res) {
-    Transaction.remove({ _id: req.params.id }, function (err, result) {
+    Transa.remove({ _id: req.params.id }, function (err, result) {
       if (err) {
         res.send({err: err})
       }
       res.send(result)
     });
   }
-
 }
