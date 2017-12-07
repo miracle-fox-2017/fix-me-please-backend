@@ -3,7 +3,7 @@ const app = express();
 var bodyParser = require('body-parser')
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/api-crud-mongoose', (err) => {
+mongoose.connect('mongodb://localhost/api-crud-mongoose_septian', (err) => {
   err ? console.log('Can\'t connect to database') : console.log('Database connected')
 });
 
