@@ -9,6 +9,6 @@ var bookSchema = new mongoose.Schema({
   stock: {type:Number}
 });
 
-var Book = mongoose.model('Book', bookSchema);
+var Book = mongoose.model('book', bookSchema);
 
 module.exports = Book

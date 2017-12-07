@@ -22,13 +22,18 @@ module.exports = {
   },
   update: function(req, res) {
     Transaction.update({ _id: req.id }, {
-      $set: req.body
+      $set: {
+        memberid:req.body.memberid,
+        days:req.body.days,
+        price: req.body.price,
+        booklist: req.body.booklist
+      }
     }, function(err, result) {
       if (err) {
         res.send({err: err})
-      }else{
-        res.send(result)
       }
+        res.send(result)
+      
     })
   },
   delete: function(req, res) {
