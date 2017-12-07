@@ -5,8 +5,9 @@ module.exports = {
     Transaction.find(function (err, transactions) {
       if (err) {
         res.send({err: err})
+      } else {
+        res.send(transactions)
       }
-      res.send(transactions)
     })
   },
   create: function(req, res) {
@@ -17,7 +18,6 @@ module.exports = {
       } else {
         res.send(result)
       }
-      res.send(result)
     });
   },
   update: function(req, res) {
@@ -26,16 +26,18 @@ module.exports = {
     }, function(err, result) {
       if (err) {
         res.send({err: err})
+      } else {
+        res.send(result)
       }
-      res.send(result)
     });
   },
   delete: function(req, res) {
     Transaction.remove({ _id: req.params.id }, function (err, result) {
       if (err) {
         res.send({err: err})
+      } else {
+        res.send(result)
       }
-      res.send(result)
     })
   }
 }

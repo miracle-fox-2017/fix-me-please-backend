@@ -5,8 +5,9 @@ module.exports = {
     Book.find(function (err, books) {
       if (err) {
         res.send({err: err})
+      } else{
+        res.send(books)
       }
-      res.send(books)
     })
   },
   create: function(req, res) {
@@ -14,8 +15,9 @@ module.exports = {
     book.save(function (err, result) {
       if (err) {
         res.send({err: err})
+      } else {
+        res.send(result)
       }
-      res.send(result)
     });
   },
   update: function(req, res) {
@@ -24,16 +26,18 @@ module.exports = {
     }, function(err, result) {
       if (err) {
         res.send({err: err})
+      } else {
+        res.send(result)
       }
-      res.send(result)
     });
   },
   delete: function(req, res) {
     Book.remove({ _id: req.params.id }, function (err, result) {
       if (err) {
         res.send({err: err})
+      } else {
+        res.send(result)
       }
-      res.send(result)
     });
   }
 }
