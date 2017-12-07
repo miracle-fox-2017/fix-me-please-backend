@@ -16,7 +16,7 @@ class BookCtrl {
 	}
 	
 	static update (req, res) {
-		Book.update({ _id: req.id }, {
+		Book.update({ _id: req.params.id }, {
 			$set: req.body
 		}, function(err, result) {
 			if (err) {
@@ -27,7 +27,7 @@ class BookCtrl {
 	}
 
 	static delete (req, res) {
-		Book.remove({ _id: req.id }, function (err, result) {
+		Book.remove({ _id: req.params.id }, function (err, result) {
 			if (err) {
 				res.status(500).send(err)
 			}
