@@ -1,4 +1,5 @@
 const Book=require("../models/Book");
+const ObjectId = require('mongoose').Types.ObjectId;
 
 module.exports = {
   all: function(req, res) {
@@ -19,14 +20,12 @@ module.exports = {
     });
   },
   update: function(req, res) {
-    // Book.update({ _id: req.id }, {
-    //   $set: req.body
-    // }, function(err, result) {
-    //   if (err) {
-    //     res.send({err: err})
-    //   }
-    //   res.send(result)
-    // });
+    Book.update({ '_id': ObjectId(req.params.id) }, req.body, function(err, result) {
+      if (err) {
+        res.send({err: err})
+      }
+      res.send(result)
+    });
   },
   delete: function(req, res) {
     // Book.remove({ _id: req.id }, function (err, result) {
