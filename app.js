@@ -12,4 +12,4 @@ var books = require('./routes/books');
 app.use('/books', books);
 // app.use('/transactions', transactions);
 
-app.listen(3000)
+app.listen(3000, console.log('Listen on port 3000'))
