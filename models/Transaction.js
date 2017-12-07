@@ -6,9 +6,9 @@ var transactionSchema = Schema({
   days: String,
   date: { type: Date, default: Date.now() },
   price: Number,
-  booklist: [{ type: Schema.Types.ObjectId, ref: 'book' }]
+  booklist: [{ type: Schema.Types.ObjectId, ref: 'Books' }]
 });
 
-var Transaction = mongoose.model('Transaction', transactionSchema);
+var Transaction = mongoose.model('Transactions', transactionSchema);
 
 module.exports = Transaction
