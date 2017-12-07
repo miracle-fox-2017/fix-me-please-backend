@@ -10,23 +10,16 @@ module.exports = {
     })
   },
   create: function(req, res) {
-    console.log(req.bod)
-    // var book = new Book({
-    //   isbn : req.body.isbn,
-    //   title : req.body.title,
-    //   author : req.body.author,
-    //   category: req.body.category,
-    //   stock: req.body.stock
-    // });
-    // book.save(function (err, result) {
-    //   if (err) {
-    //     res.send({err: err})
-    //   }
-    //   res.send(result)
-    // });
+    var book = new Book(req.body);
+    book.save(function (err, result) {
+      if (err) {
+        res.send({err: err})
+      }
+      res.send(result)
+    });
   },
   update: function(req, res) {
-    Book.update({ _id: req.id }, {
+    Book.update({ _id: req.params.id }, {
       $set: req.body
     }, function(err, result) {
       if (err) {
