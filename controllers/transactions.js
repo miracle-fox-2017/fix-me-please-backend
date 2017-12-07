@@ -6,6 +6,7 @@ module.exports = {
       if (err) {
         res.send({err: err})
       }
+      console.log('MASUK ALL');
       res.send(transactions)
     })
   },
@@ -15,6 +16,7 @@ module.exports = {
       if (err) {
         res.send({err: err})
       } else {
+        console.log('MASUK POST');
         res.send(result)
       }
       res.send(result)
@@ -25,6 +27,7 @@ module.exports = {
       $set: req.body
     }, function(err, result) {
       if (err) {
+        console.log('MASUK UPDATE');
         res.send({err: err})
       }
       res.send(result)
@@ -35,6 +38,7 @@ module.exports = {
       if (err) {
         res.send({err: err})
       }
+      console.log('MASUK DELETE');
       res.send(result)
     })
   }
