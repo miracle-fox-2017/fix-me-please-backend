@@ -34,6 +34,6 @@ module.exports = {
         res.send({err: err})
       }
       res.send(result)
-    }
-  });
+    })
+  }
 }
