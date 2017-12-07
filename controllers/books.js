@@ -20,15 +20,9 @@ module.exports = {
     });
   },
   update: function(req, res) {
-    console.log(`ASDILKJQWDLKMQWMDIQWJODWQ  ${JSON.stringify(req.body)}`)
+    console.log(req.body);
     Book.update({ _id: req.params.id }, {
-      $set: {
-        isbn: req.body.isbn,
-        title: req.body.title,
-        author: req.body.author,
-        category: req.body.category,
-        stock: req.body.stock
-      }
+      $set: req.body
     }, function(err, result) {
       if (err) {
         res.send({err: err})
