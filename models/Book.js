@@ -4,8 +4,8 @@ var bookSchema = mongoose.Schema({
   isbn: String,
   title: String,
   author: String,
-  category: Number,
-  stock: Number
+  category: String,
+  stock: String
 });
 
 var Book = mongoose.model('Book', bookSchema);
