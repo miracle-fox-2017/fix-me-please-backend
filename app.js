@@ -1,13 +1,17 @@
 const express = require('express');
 const app = express()
+const bodyParser = require('body-parser')
 
-var mongoose = require('mongoose');
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
+const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/api-crud-mongoose', (err) => {
   err ? console.log('Can\'t connect to database') : console.log('Database connected')
 });
 
-var books = require('./routes/books');
-var transactions = require('./routes/transactions');
+const books = require('./routes/books');
+const transactions = require('./routes/transactions');
 
 app.use('/books', books);
 app.use('/transactions', transactions);
