@@ -6,7 +6,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/api-crud-mongoose', (err) => {
+mongoose.connect('mongodb://localhost/api-crud-mongoose', {useMongoClient: true}, (err) => {
   err ? console.log('Can\'t connect to database') : console.log('Database connected')
 });
 
