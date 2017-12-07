@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema
 
-var transactionSchema = Schema({
+const transactionSchema = new Schema({
   memberid: String,
   days: String,
   date: { type: Date, default: Date.now() },
@@ -9,6 +9,6 @@ var transactionSchema = Schema({
   booklist: [{ type: Schema.Types.ObjectId, ref: 'book' }]
 });
 
-var Transaction = mongoose.model('Transaction', transactionSchema);
+const Transaction = mongoose.model('Transaction', transactionSchema);
 
 module.exports = Transaction
